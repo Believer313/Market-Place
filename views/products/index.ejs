@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market Place</title>
+</head>
+<body>
+  <h3>Product List</h3>
+  <ul>
+    <% allProducts.forEach(product => { %>
+      <li>
+        <strong>Name:</strong> <%= product.name %><br>
+        <strong>Price:</strong> <%= product.price %><br>
+        <strong>Description:</strong> <%= product.description %><br>
+        <strong>Image URL:</strong> <%= product.imageUrl %><br>
+        <strong>Rating:</strong> <%= product.rating %><br>
+        <strong>Category:</strong> <%= product.category %><br>
+        <strong>Rating Count:</strong> <%= product.ratingCount %>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

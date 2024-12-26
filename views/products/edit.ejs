@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market Place - Edit Product</title>
+</head>
+<body>
+  <h3>Edit Product</h3>
+  <form action="/products/<%= product._id %>?_method=PUT" method="POST">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" value="<%= product.name %>" required>
+    </div>
+    <div>
+      <label for="price">Price:</label>
+      <input type="number" id="price" name="price" value="<%= product.price %>" required>
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" required><%= product.description %></textarea>
+    </div>
+    <div>
+      <label for="imageUrl">Image URL:</label>
+      <input type="text" id="imageUrl" name="imageUrl" value="<%= product.imageUrl %>" required>
+    </div>
+    <div>
+      <label for="rating">Rating:</label>
+      <input type="number" id="rating" name="rating" step="0.1" value="<%= product.rating %>" required>
+    </div>
+    <div>
+      <label for="category">Category:</label>
+      <input type="text" id="category" name="category" value="<%= product.category %>" required>
+    </div>
+    <div>
+      <label for="ratingCount">Rating Count:</label>
+      <input type="number" id="ratingCount" name="ratingCount" value="<%= product.ratingCount %>" required>
+    </div>
+    <div>
+      <button type="submit">Update Product</button>
+    </div>
+  </form>
+</body>
+</html>
