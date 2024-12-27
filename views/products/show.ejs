@@ -1,21 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Market Place</title>
-</head>
-<body>
-  <h3>Product Details</h3>
-  <p><strong>Name:</strong> <%= product.name %></p>
-  <p><strong>Price:</strong> <%= product.price %></p>
-  <p><strong>Description:</strong> <%= product.description %></p>
-  <p><strong>Image URL:</strong> <%= product.imageUrl %></p>
-  <p><strong>Rating:</strong> <%= product.rating %></p>
-  <p><strong>Category:</strong> <%= product.category %></p>
-  <p><strong>Rating Count:</strong> <%= product.ratingCount %></p>
-  <a href="/products/<%= product._id %>/edit">Edit</a>
-  <form action="/products/<%= product._id %>?_method=DELETE" method="POST">
-    <button type="submit">Delete</button>
-</body>
-</html>
+<% layout('layouts/boilerplate') %>
+<% title = 'Product Details' %>
+
+<h3>Product Details</h3>
+<p><strong>Name:</strong> <%= product.name %></p>
+<p><strong>Price:</strong> <%= product.price %></p>
+<p><strong>Description:</strong> <%= product.description %></p>
+<p><strong>Image URL:</strong> <%= product.imageUrl %></p>
+<p><strong>Rating:</strong> <%= product.rating %></p>
+<p><strong>Category:</strong> <%= product.category %></p>
+<p><strong>Rating Count:</strong> <%= product.ratingCount %></p>
+
+<a href="/products/<%= product._id %>/edit">Edit</a>
+
+<form action="/products/<%= product._id %>?_method=DELETE" method="POST" style="display:inline;">
+  <button type="submit">Delete</button>
+</form>

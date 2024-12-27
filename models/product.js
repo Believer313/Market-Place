@@ -1,14 +1,37 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const productSchema = new Schema({
-  name: String,
-  price: Number,
-  description: String,
-  imageUrl: String,
-  rating: Number,
-  category: String,
-  ratingCount: Number,
+  name: {
+    type: String,
+    required: true
+  },
+  price: {
+    type: Number,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
+  imageUrl: {
+    type: String,
+    default: "https://via.placeholder.com/150",
+    set: (v) => v === "" ? "https://via.placeholder.com/150" : v
+  },
+  rating: {
+    type: Number,
+    required: true
+  },
+  category: {
+    type: String,
+    required: true
+  },
+  ratingCount: {
+    type: Number,
+    required: true
+  }
 });
 
-module.exports = mongoose.model('Product', productSchema);
+const Product = mongoose.model('Product', productSchema);
+module.exports = Product;
